@@ -1,0 +1,28 @@
+//
+//  Prefix.pch
+//  AXMobile
+//
+//  Created by Anthony Shoumikhin on 8/14/14.
+//  Copyright (c) 2014. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_7_1
+#warning "This project uses features only available in iOS SDK 7.1 and later."
+#endif
+
+#ifdef __OBJC__
+    @import Foundation;
+    @import UIKit;
+
+    #import <NSXtensions.h>
+    #import <extobjc.h>
+    #import <ReactiveCocoa.h>
+    #import <XMLDictionary.h>
+    #import <SSKeychain.h>
+    #import <TPKeyboardAvoidingScrollView.h>
+    #import <TSMessage.h>
+
+    #import "Definitions.h"
+#endif

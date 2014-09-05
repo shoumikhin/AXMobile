@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3108C7A2CA1A466E81EE1909 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F05E375001E64792A1D8F87C /* libPods-Tests.a */; };
+		4EF14E545AB246EB9054663C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE6987718694ED4AA870845 /* libPods.a */; };
+		922E035B19A1DDDE0038F1F7 /* AXAuthServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 922E035A19A1DDDE0038F1F7 /* AXAuthServiceTests.m */; };
+		922EA4AE19A990EB006618C0 /* dynamics_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 922EA4AC19A990EB006618C0 /* dynamics_logo.png */; };
+		922EA4AF19A990EB006618C0 /* dynamics_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 922EA4AD19A990EB006618C0 /* dynamics_logo@2x.png */; };
+		9231E30E199CA85300373D68 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9231E2F3199CA85300373D68 /* Podfile */; };
+		9231E30F199CA85300373D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9231E2F6199CA85300373D68 /* Main.storyboard */; };
+		9231E312199CA85300373D68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9231E2FB199CA85300373D68 /* Images.xcassets */; };
+		9231E314199CA85300373D68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E2FF199CA85300373D68 /* AppDelegate.m */; };
+		9231E315199CA85300373D68 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E302199CA85300373D68 /* LoginViewController.m */; };
+		9231E316199CA85300373D68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E304199CA85300373D68 /* main.m */; };
+		92960C4F19B88A96008EBF9E /* AXAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C2E19B88A96008EBF9E /* AXAuthManager.m */; };
+		92960C5019B88A96008EBF9E /* AXAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3019B88A96008EBF9E /* AXAuthService.m */; };
+		92960C5119B88A96008EBF9E /* AXACSRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3319B88A96008EBF9E /* AXACSRequestBuilder.m */; };
+		92960C5219B88A96008EBF9E /* AXADFSRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3519B88A96008EBF9E /* AXADFSRequestBuilder.m */; };
+		92960C5319B88A96008EBF9E /* AXACSTokenParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3819B88A96008EBF9E /* AXACSTokenParser.m */; };
+		92960C5419B88A96008EBF9E /* AXADFSTokenParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3A19B88A96008EBF9E /* AXADFSTokenParser.m */; };
+		92960C5519B88A96008EBF9E /* AXBusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3E19B88A96008EBF9E /* AXBusService.m */; };
+		92960C5819B88A96008EBF9E /* AXCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4719B88A96008EBF9E /* AXCredentials.m */; };
+		92960C5919B88A96008EBF9E /* AXCredentialsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4919B88A96008EBF9E /* AXCredentialsStore.m */; };
+		92960C5A19B88A96008EBF9E /* AXURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4E19B88A96008EBF9E /* AXURLConnection.m */; };
+		92960C5D19B88D42008EBF9E /* ExpenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */; };
+		92960C6919B9AFF6008EBF9E /* AXBusParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6619B9AFF6008EBF9E /* AXBusParserConfig.m */; };
+		92960C6A19B9AFF6008EBF9E /* AXBusParserExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6819B9AFF6008EBF9E /* AXBusParserExpense.m */; };
+		92960C7119B9B015008EBF9E /* AXBusRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6D19B9B015008EBF9E /* AXBusRequestBuilder.m */; };
+		92960C7219B9B015008EBF9E /* AXBusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C7019B9B015008EBF9E /* AXBusParser.m */; };
+		92D56CDE199CA99C00B41919 /* AXBusServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D56CDC199CA99C00B41919 /* AXBusServiceTests.m */; };
+		92FCA15E19B6A22B00125DA6 /* TSMessagesDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCA15D19B6A22B00125DA6 /* TSMessagesDesign.json */; };
+		92FCA16319B6B48400125DA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCA16219B6B48400125DA6 /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		922BEF5D199DCF0100351B1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9231E2C5199CA60900373D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9231E2CC199CA60900373D68;
+			remoteInfo = AXMobile;
+		};
+		9231E2E4199CA60A00373D68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9231E2C5199CA60900373D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9231E2CC199CA60900373D68;
+			remoteInfo = AXMobile;
+		};
+		92F95612199CB5B000F0FF40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9231E2C5199CA60900373D68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9231E2CC199CA60900373D68;
+			remoteInfo = AXMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FE6987718694ED4AA870845 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		82531BE604DE40E5B00DBD09 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		922BEF5C199D97D500351B1F /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		922CF76F199EA1A1000D79DB /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
+		922E035A19A1DDDE0038F1F7 /* AXAuthServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAuthServiceTests.m; sourceTree = "<group>"; };
+		922EA4AC19A990EB006618C0 /* dynamics_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dynamics_logo.png; sourceTree = "<group>"; };
+		922EA4AD19A990EB006618C0 /* dynamics_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dynamics_logo@2x.png"; sourceTree = "<group>"; };
+		9231E2CD199CA60900373D68 /* AXMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9231E2E3199CA60A00373D68 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9231E2F3199CA85300373D68 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9231E2F7199CA85300373D68 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9231E2FB199CA85300373D68 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9231E2FC199CA85300373D68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9231E2FE199CA85300373D68 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9231E2FF199CA85300373D68 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9231E301199CA85300373D68 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9231E302199CA85300373D68 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9231E303199CA85300373D68 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
+		9231E304199CA85300373D68 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9231E30C199CA85300373D68 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		92960C2D19B88A96008EBF9E /* AXAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAuthManager.h; sourceTree = "<group>"; };
+		92960C2E19B88A96008EBF9E /* AXAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAuthManager.m; sourceTree = "<group>"; };
+		92960C2F19B88A96008EBF9E /* AXAuthService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAuthService.h; sourceTree = "<group>"; };
+		92960C3019B88A96008EBF9E /* AXAuthService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAuthService.m; sourceTree = "<group>"; };
+		92960C3219B88A96008EBF9E /* AXACSRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXACSRequestBuilder.h; sourceTree = "<group>"; };
+		92960C3319B88A96008EBF9E /* AXACSRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXACSRequestBuilder.m; sourceTree = "<group>"; };
+		92960C3419B88A96008EBF9E /* AXADFSRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXADFSRequestBuilder.h; sourceTree = "<group>"; };
+		92960C3519B88A96008EBF9E /* AXADFSRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXADFSRequestBuilder.m; sourceTree = "<group>"; };
+		92960C3719B88A96008EBF9E /* AXACSTokenParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXACSTokenParser.h; sourceTree = "<group>"; };
+		92960C3819B88A96008EBF9E /* AXACSTokenParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXACSTokenParser.m; sourceTree = "<group>"; };
+		92960C3919B88A96008EBF9E /* AXADFSTokenParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXADFSTokenParser.h; sourceTree = "<group>"; };
+		92960C3A19B88A96008EBF9E /* AXADFSTokenParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXADFSTokenParser.m; sourceTree = "<group>"; };
+		92960C3B19B88A96008EBF9E /* AXTokenParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTokenParser.h; sourceTree = "<group>"; };
+		92960C3D19B88A96008EBF9E /* AXBusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusService.h; sourceTree = "<group>"; };
+		92960C3E19B88A96008EBF9E /* AXBusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusService.m; sourceTree = "<group>"; };
+		92960C4619B88A96008EBF9E /* AXCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCredentials.h; sourceTree = "<group>"; };
+		92960C4719B88A96008EBF9E /* AXCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCredentials.m; sourceTree = "<group>"; };
+		92960C4819B88A96008EBF9E /* AXCredentialsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCredentialsStore.h; sourceTree = "<group>"; };
+		92960C4919B88A96008EBF9E /* AXCredentialsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCredentialsStore.m; sourceTree = "<group>"; };
+		92960C4B19B88A96008EBF9E /* AXRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRequestBuilder.h; sourceTree = "<group>"; };
+		92960C4C19B88A96008EBF9E /* AXResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXResponseParser.h; sourceTree = "<group>"; };
+		92960C4D19B88A96008EBF9E /* AXURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXURLConnection.h; sourceTree = "<group>"; };
+		92960C4E19B88A96008EBF9E /* AXURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXURLConnection.m; sourceTree = "<group>"; };
+		92960C5B19B88D42008EBF9E /* ExpenseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseAddViewController.h; sourceTree = "<group>"; };
+		92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseAddViewController.m; sourceTree = "<group>"; };
+		92960C6519B9AFF6008EBF9E /* AXBusParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusParserConfig.h; sourceTree = "<group>"; };
+		92960C6619B9AFF6008EBF9E /* AXBusParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusParserConfig.m; sourceTree = "<group>"; };
+		92960C6719B9AFF6008EBF9E /* AXBusParserExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusParserExpense.h; sourceTree = "<group>"; };
+		92960C6819B9AFF6008EBF9E /* AXBusParserExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusParserExpense.m; sourceTree = "<group>"; };
+		92960C6C19B9B015008EBF9E /* AXBusRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusRequestBuilder.h; sourceTree = "<group>"; };
+		92960C6D19B9B015008EBF9E /* AXBusRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusRequestBuilder.m; sourceTree = "<group>"; };
+		92960C6F19B9B015008EBF9E /* AXBusParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusParser.h; sourceTree = "<group>"; };
+		92960C7019B9B015008EBF9E /* AXBusParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusParser.m; sourceTree = "<group>"; };
+		92D56CDB199CA99C00B41919 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92D56CDC199CA99C00B41919 /* AXBusServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusServiceTests.m; sourceTree = "<group>"; };
+		92FCA15D19B6A22B00125DA6 /* TSMessagesDesign.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TSMessagesDesign.json; sourceTree = "<group>"; };
+		92FCA16119B6B48400125DA6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		92FCA16219B6B48400125DA6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F05E375001E64792A1D8F87C /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9231E2CA199CA60900373D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF14E545AB246EB9054663C /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9231E2E0199CA60A00373D68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3108C7A2CA1A466E81EE1909 /* libPods-Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9231E2C4199CA60900373D68 = {
+			isa = PBXGroup;
+			children = (
+				9231E2F4199CA85300373D68 /* Resources */,
+				9231E2FD199CA85300373D68 /* Sources */,
+				92D56CDA199CA99C00B41919 /* Tests */,
+				9231E2CE199CA60900373D68 /* Products */,
+				DB4047DD9C42438CAF9FE853 /* Frameworks */,
+				9231E2F3199CA85300373D68 /* Podfile */,
+				922CF76F199EA1A1000D79DB /* Pods-Tests.xcconfig */,
+				82531BE604DE40E5B00DBD09 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		9231E2CE199CA60900373D68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9231E2CD199CA60900373D68 /* AXMobile.app */,
+				9231E2E3199CA60A00373D68 /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9231E2F4199CA85300373D68 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92FCA15C19B6A22B00125DA6 /* Static */,
+				9231E2F5199CA85300373D68 /* I18n */,
+				9231E2F8199CA85300373D68 /* Images */,
+				9231E2FB199CA85300373D68 /* Images.xcassets */,
+				9231E2FC199CA85300373D68 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9231E2F5199CA85300373D68 /* I18n */ = {
+			isa = PBXGroup;
+			children = (
+				9231E2F6199CA85300373D68 /* Main.storyboard */,
+			);
+			path = I18n;
+			sourceTree = "<group>";
+		};
+		9231E2F8199CA85300373D68 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				922EA4AC19A990EB006618C0 /* dynamics_logo.png */,
+				922EA4AD19A990EB006618C0 /* dynamics_logo@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9231E2FD199CA85300373D68 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9231E2FE199CA85300373D68 /* AppDelegate.h */,
+				9231E2FF199CA85300373D68 /* AppDelegate.m */,
+				9231E303199CA85300373D68 /* Definitions.h */,
+				9231E304199CA85300373D68 /* main.m */,
+				9231E30C199CA85300373D68 /* Prefix.pch */,
+				9231E305199CA85300373D68 /* Models */,
+				9231E300199CA85300373D68 /* Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9231E300199CA85300373D68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92FCA16119B6B48400125DA6 /* MainViewController.h */,
+				92FCA16219B6B48400125DA6 /* MainViewController.m */,
+				9231E301199CA85300373D68 /* LoginViewController.h */,
+				9231E302199CA85300373D68 /* LoginViewController.m */,
+				92960C5B19B88D42008EBF9E /* ExpenseAddViewController.h */,
+				92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9231E305199CA85300373D68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92960C2C19B88A96008EBF9E /* Auth */,
+				92960C3C19B88A96008EBF9E /* Bus */,
+				92960C6419B9AF3F008EBF9E /* BusParsers */,
+				92960C4519B88A96008EBF9E /* Credentials */,
+				92960C4A19B88A96008EBF9E /* Network */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92960C2C19B88A96008EBF9E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				92960C2D19B88A96008EBF9E /* AXAuthManager.h */,
+				92960C2E19B88A96008EBF9E /* AXAuthManager.m */,
+				92960C2F19B88A96008EBF9E /* AXAuthService.h */,
+				92960C3019B88A96008EBF9E /* AXAuthService.m */,
+				92960C3119B88A96008EBF9E /* Builders */,
+				92960C3619B88A96008EBF9E /* Parsers */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		92960C3119B88A96008EBF9E /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				92960C3219B88A96008EBF9E /* AXACSRequestBuilder.h */,
+				92960C3319B88A96008EBF9E /* AXACSRequestBuilder.m */,
+				92960C3419B88A96008EBF9E /* AXADFSRequestBuilder.h */,
+				92960C3519B88A96008EBF9E /* AXADFSRequestBuilder.m */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		92960C3619B88A96008EBF9E /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				92960C3719B88A96008EBF9E /* AXACSTokenParser.h */,
+				92960C3819B88A96008EBF9E /* AXACSTokenParser.m */,
+				92960C3919B88A96008EBF9E /* AXADFSTokenParser.h */,
+				92960C3A19B88A96008EBF9E /* AXADFSTokenParser.m */,
+				92960C3B19B88A96008EBF9E /* AXTokenParser.h */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		92960C3C19B88A96008EBF9E /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				92960C6B19B9B015008EBF9E /* Builder */,
+				92960C6E19B9B015008EBF9E /* Parser */,
+				92960C3D19B88A96008EBF9E /* AXBusService.h */,
+				92960C3E19B88A96008EBF9E /* AXBusService.m */,
+			);
+			path = Bus;
+			sourceTree = "<group>";
+		};
+		92960C4519B88A96008EBF9E /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				92960C4619B88A96008EBF9E /* AXCredentials.h */,
+				92960C4719B88A96008EBF9E /* AXCredentials.m */,
+				92960C4819B88A96008EBF9E /* AXCredentialsStore.h */,
+				92960C4919B88A96008EBF9E /* AXCredentialsStore.m */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		92960C4A19B88A96008EBF9E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92960C4B19B88A96008EBF9E /* AXRequestBuilder.h */,
+				92960C4C19B88A96008EBF9E /* AXResponseParser.h */,
+				92960C4D19B88A96008EBF9E /* AXURLConnection.h */,
+				92960C4E19B88A96008EBF9E /* AXURLConnection.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		92960C6419B9AF3F008EBF9E /* BusParsers */ = {
+			isa = PBXGroup;
+			children = (
+				92960C6519B9AFF6008EBF9E /* AXBusParserConfig.h */,
+				92960C6619B9AFF6008EBF9E /* AXBusParserConfig.m */,
+				92960C6719B9AFF6008EBF9E /* AXBusParserExpense.h */,
+				92960C6819B9AFF6008EBF9E /* AXBusParserExpense.m */,
+			);
+			path = BusParsers;
+			sourceTree = "<group>";
+		};
+		92960C6B19B9B015008EBF9E /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				92960C6C19B9B015008EBF9E /* AXBusRequestBuilder.h */,
+				92960C6D19B9B015008EBF9E /* AXBusRequestBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		92960C6E19B9B015008EBF9E /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				92960C6F19B9B015008EBF9E /* AXBusParser.h */,
+				92960C7019B9B015008EBF9E /* AXBusParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		92D56CDA199CA99C00B41919 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				92D56CDB199CA99C00B41919 /* Info.plist */,
+				922BEF5C199D97D500351B1F /* Prefix.pch */,
+				92D56CDC199CA99C00B41919 /* AXBusServiceTests.m */,
+				922E035A19A1DDDE0038F1F7 /* AXAuthServiceTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		92FCA15C19B6A22B00125DA6 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				92FCA15D19B6A22B00125DA6 /* TSMessagesDesign.json */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		DB4047DD9C42438CAF9FE853 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE6987718694ED4AA870845 /* libPods.a */,
+				F05E375001E64792A1D8F87C /* libPods-Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9231E2CC199CA60900373D68 /* AXMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9231E2ED199CA60A00373D68 /* Build configuration list for PBXNativeTarget "AXMobile" */;
+			buildPhases = (
+				3C1278A6D34B41CFA2F46BE9 /* Check Pods Manifest.lock */,
+				9231E2C9199CA60900373D68 /* Sources */,
+				9231E2CA199CA60900373D68 /* Frameworks */,
+				9231E2CB199CA60900373D68 /* Resources */,
+				F46763FC902B41A696A20BDB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AXMobile;
+			productName = AXMobile;
+			productReference = 9231E2CD199CA60900373D68 /* AXMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9231E2E2199CA60A00373D68 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9231E2F0199CA60A00373D68 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				1AAEB2F7E8F14FD5ADC7624A /* Check Pods Manifest.lock */,
+				9231E2DF199CA60A00373D68 /* Sources */,
+				9231E2E0199CA60A00373D68 /* Frameworks */,
+				9231E2E1199CA60A00373D68 /* Resources */,
+				8DB0090D621B42E8BB8C7CDE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9231E2E5199CA60A00373D68 /* PBXTargetDependency */,
+				92F95613199CB5B000F0FF40 /* PBXTargetDependency */,
+				922BEF5E199DCF0100351B1F /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = AXMobileTests;
+			productReference = 9231E2E3199CA60A00373D68 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9231E2C5199CA60900373D68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = shoumikh.in;
+				TargetAttributes = {
+					9231E2CC199CA60900373D68 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					9231E2E2199CA60A00373D68 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 9231E2CC199CA60900373D68;
+					};
+				};
+			};
+			buildConfigurationList = 9231E2C8199CA60900373D68 /* Build configuration list for PBXProject "AXMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9231E2C4199CA60900373D68;
+			productRefGroup = 9231E2CE199CA60900373D68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9231E2CC199CA60900373D68 /* AXMobile */,
+				9231E2E2199CA60A00373D68 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9231E2CB199CA60900373D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92FCA15E19B6A22B00125DA6 /* TSMessagesDesign.json in Resources */,
+				922EA4AF19A990EB006618C0 /* dynamics_logo@2x.png in Resources */,
+				922EA4AE19A990EB006618C0 /* dynamics_logo.png in Resources */,
+				9231E30E199CA85300373D68 /* Podfile in Resources */,
+				9231E312199CA85300373D68 /* Images.xcassets in Resources */,
+				9231E30F199CA85300373D68 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9231E2E1199CA60A00373D68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AAEB2F7E8F14FD5ADC7624A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3C1278A6D34B41CFA2F46BE9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8DB0090D621B42E8BB8C7CDE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F46763FC902B41A696A20BDB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9231E2C9199CA60900373D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92960C5919B88A96008EBF9E /* AXCredentialsStore.m in Sources */,
+				92960C6A19B9AFF6008EBF9E /* AXBusParserExpense.m in Sources */,
+				92960C5219B88A96008EBF9E /* AXADFSRequestBuilder.m in Sources */,
+				92960C7119B9B015008EBF9E /* AXBusRequestBuilder.m in Sources */,
+				92960C5119B88A96008EBF9E /* AXACSRequestBuilder.m in Sources */,
+				92960C5019B88A96008EBF9E /* AXAuthService.m in Sources */,
+				92FCA16319B6B48400125DA6 /* MainViewController.m in Sources */,
+				92960C5819B88A96008EBF9E /* AXCredentials.m in Sources */,
+				92960C4F19B88A96008EBF9E /* AXAuthManager.m in Sources */,
+				92960C5A19B88A96008EBF9E /* AXURLConnection.m in Sources */,
+				92960C5419B88A96008EBF9E /* AXADFSTokenParser.m in Sources */,
+				9231E315199CA85300373D68 /* LoginViewController.m in Sources */,
+				92960C5319B88A96008EBF9E /* AXACSTokenParser.m in Sources */,
+				92960C5519B88A96008EBF9E /* AXBusService.m in Sources */,
+				9231E316199CA85300373D68 /* main.m in Sources */,
+				92960C7219B9B015008EBF9E /* AXBusParser.m in Sources */,
+				92960C6919B9AFF6008EBF9E /* AXBusParserConfig.m in Sources */,
+				92960C5D19B88D42008EBF9E /* ExpenseAddViewController.m in Sources */,
+				9231E314199CA85300373D68 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9231E2DF199CA60A00373D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D56CDE199CA99C00B41919 /* AXBusServiceTests.m in Sources */,
+				922E035B19A1DDDE0038F1F7 /* AXAuthServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		922BEF5E199DCF0100351B1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9231E2CC199CA60900373D68 /* AXMobile */;
+			targetProxy = 922BEF5D199DCF0100351B1F /* PBXContainerItemProxy */;
+		};
+		9231E2E5199CA60A00373D68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9231E2CC199CA60900373D68 /* AXMobile */;
+			targetProxy = 9231E2E4199CA60A00373D68 /* PBXContainerItemProxy */;
+		};
+		92F95613199CB5B000F0FF40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9231E2CC199CA60900373D68 /* AXMobile */;
+			targetProxy = 92F95612199CB5B000F0FF40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9231E2F6199CA85300373D68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9231E2F7199CA85300373D68 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9231E2EB199CA60A00373D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9231E2EC199CA60A00373D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9231E2EE199CA60A00373D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82531BE604DE40E5B00DBD09 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Sources/Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = AXMobile;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9231E2EF199CA60A00373D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82531BE604DE40E5B00DBD09 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Sources/Prefix.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = AXMobile;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9231E2F1199CA60A00373D68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922CF76F199EA1A1000D79DB /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AXMobile.app/AXMobile";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		9231E2F2199CA60A00373D68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922CF76F199EA1A1000D79DB /* Pods-Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AXMobile.app/AXMobile";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tests/Prefix.pch;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9231E2C8199CA60900373D68 /* Build configuration list for PBXProject "AXMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9231E2EB199CA60A00373D68 /* Debug */,
+				9231E2EC199CA60A00373D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9231E2ED199CA60A00373D68 /* Build configuration list for PBXNativeTarget "AXMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9231E2EE199CA60A00373D68 /* Debug */,
+				9231E2EF199CA60A00373D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9231E2F0199CA60A00373D68 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9231E2F1199CA60A00373D68 /* Debug */,
+				9231E2F2199CA60A00373D68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9231E2C5199CA60900373D68 /* Project object */;
+}
