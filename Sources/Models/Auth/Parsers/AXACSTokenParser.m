@@ -34,7 +34,7 @@
 //------------------------------------------------------------------------------
 + (NSDate *)parseExpirationDate:(NSString *)token
 {
-    NSString *expirationDate = [token substringWithRegularExpressionPattern:@"ExpiresOn%3D([0-9]+)" options:NSRegularExpressionCaseInsensitive];
+    NSString *expirationDate = [token substringWithRegularExpressionPattern:@"ExpiresOn=([0-9]+)" options:NSRegularExpressionCaseInsensitive];
 
     return expirationDate.length > 0 ? [NSDate dateWithTimeIntervalSince1970:expirationDate.integerValue] : nil;
 }

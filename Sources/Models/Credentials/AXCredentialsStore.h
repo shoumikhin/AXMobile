@@ -12,5 +12,6 @@
 
 + (BOOL)save:(AXCredentials *)credentials forService:(NSString *)service withUsername:(NSString *)username;
 + (AXCredentials *)loadForService:(NSString *)service withUsername:(NSString *)username;
++ (BOOL)deleteCredentialsForService:(NSString *)service withUsername:(NSString *)username;
 
 @end

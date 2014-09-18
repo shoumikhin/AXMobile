@@ -16,12 +16,14 @@
 //==============================================================================
 #define USER_DEFAULTS_SERVICE "USER_DEFAULTS_SERVICE"
 #define USER_DEFAULTS_USERNAME "USER_DEFAULTS_USERNAME"
+#define USER_DEFAULTS_SHOULD_SAVE_CREDENTIALS "USER_DEFAULTS_SHOULD_SAVE_CREDENTIALS"
 #define ADFSURL "https://corp.sts.microsoft.com/adfs/services/trust/13/usernamemixed"
 //==============================================================================
 @interface AXAuthManager ()
 
-@property (nonatomic) AXAuthState state;
+@property (nonatomic) BOOL isLoggedIn;
 @property (nonatomic) NSString *service;
+@property (nonatomic) NSString *username;
 @property (nonatomic) AXCredentials *credentials;
 @property (nonatomic) NSArray *configurations;
 @property (nonatomic) AXBusService *configService;
@@ -29,35 +31,118 @@
 
 @end
 //==============================================================================
-@implementation AXAuthManager
-//------------------------------------------------------------------------------
-SYNTHESIZE_SINGLETON_FOR_CLASS(AXAuthManager)
+@implementation AXAuthManager SYNTHESIZE_SINGLETON_FOR_CLASS(AXAuthManager)
 //------------------------------------------------------------------------------
 - (instancetype)init
 {
     if (self = [super init])
     {
-        NSString *service = [NSUserDefaults.standardUserDefaults objectForKey:@USER_DEFAULTS_SERVICE];
-        NSString *username = [NSUserDefaults.standardUserDefaults objectForKey:@USER_DEFAULTS_USERNAME];
-
-        self.service = service;
-        self.credentials = [AXCredentialsStore loadForService:service withUsername:username];
+        [self initIsLoggedIn];
+        [self initService];
+        [self initUsername];
+        [self initShouldSaveCredentials];
+        [self initCredentials];
     }
 
     return self;
 }
 //------------------------------------------------------------------------------
+- (void)initIsLoggedIn
+{
+    RAC(self, isLoggedIn) =
+    [RACSignal combineLatest:
+     @[
+        RACObserve(self, service),
+        RACObserve(self, username),
+        RACObserve(self, credentials)
+      ]
+     reduce:
+     ^(NSString *service, NSString *username, AXCredentials *credentials)
+     {
+         return @(
+                    service.length > 0 &&
+                    username.length > 0 &&
+                    credentials
+                );
+     }];
+}
+//------------------------------------------------------------------------------
+- (void)initService
+{
+    RACChannelTerminal *defaultService = [NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@USER_DEFAULTS_SERVICE];
+    RACChannelTerminal *service = RACChannelTo(self, service, @"");
+
+    @weakify(self);
+
+    [defaultService subscribe:service];
+    [[[service skip:1]
+      map:
+      ^ id (NSString *service)
+      {
+          @strongify(self);
+
+          return self.shouldSaveCredentials ? service : nil;
+      }]
+     subscribe:defaultService];
+}
+//------------------------------------------------------------------------------
+- (void)initUsername
+{
+    RACChannelTerminal *defaultUsername = [NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@USER_DEFAULTS_USERNAME];
+    RACChannelTerminal *username = RACChannelTo(self, username, @"");
+
+    @weakify(self);
+
+    [defaultUsername subscribe:username];
+    [[[username skip:1]
+      map:
+      ^ id (NSString *username)
+      {
+          @strongify(self);
+
+          return self.shouldSaveCredentials ? username : nil;
+      }]
+     subscribe:defaultUsername];
+}
+//------------------------------------------------------------------------------
+- (void)initShouldSaveCredentials
+{
+    RACChannelTerminal *saveCredentials = RACChannelTo(self, shouldSaveCredentials, @NO);
+    RACChannelTerminal *defaultSaveCredentials = [NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@USER_DEFAULTS_SHOULD_SAVE_CREDENTIALS];
+
+    [defaultSaveCredentials subscribe:saveCredentials];
+    [[saveCredentials skip:1] subscribe:defaultSaveCredentials];
+}
+//------------------------------------------------------------------------------
+- (void)initCredentials
+{
+    self.credentials = [AXCredentialsStore loadForService:self.service withUsername:self.username];
+
+    @weakify(self);
+
+    [[RACObserve(self, credentials) skip:1]
+     subscribeNext:
+     ^(AXCredentials *credentials)
+     {
+         @strongify(self);
+
+         if (credentials && self.shouldSaveCredentials)
+             [AXCredentialsStore save:credentials forService:self.service withUsername:self.username];
+         else
+             [AXCredentialsStore deleteCredentialsForService:self.service withUsername:self.username];
+     }];
+}
+//------------------------------------------------------------------------------
 - (RACSignal *)loginAtService:(NSString *)service withUser:(NSString *)username andPassword:(NSString *)password
 {@synchronized(self)
 {
-    if (AXAuthLoggedOut != self.state)
+    if (self.isLoggedIn)
         return [RACSignal error:[NSError errorWithDomain:@"" code:0 userInfo:
                                  @{
                                     NSLocalizedDescriptionKey :
                                         NSLocalizedString(@"Cannot login if not logged out.", nil)
                                  }]];
 
-    self.state = AXAuthLoggingIn;
     self.configService = [AXBusService.alloc initWithService:service
                                                     contract:@"ConfigurationServiceContract"
                                           andContractBusPath:@"Config"];
@@ -77,10 +162,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AXAuthManager)
                    @strongify(self);
 
                    self.configurations = [AXBusParserConfig parseServicesConfigurations:response];
-
-                   NSString *ADFS = [AXBusParserConfig parseADFSURL:response];
-
-                   self.authService = [AXAuthService.alloc initWithService:service andADFSURL:[NSURL URLWithString:ADFS ?: @ADFSURL]];
+                   self.authService = [AXAuthService.alloc initWithService:service
+                                                                andADFSURL:[NSURL URLWithString:
+                                                                            [AXBusParserConfig parseADFSURL:response] ?:
+                                                                            @ADFSURL]];
 
                    return [self.authService loginUser:username withPassword:password];
                }]
@@ -90,72 +175,41 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AXAuthManager)
                   @strongify(self);
 
                   self.service = service;
+                  self.username = username;
                   self.credentials = credentials;
-
-                  if (self.saveLastLoginCredentials)
-                  {
-                      [AXCredentialsStore save:self.credentials forService:service withUsername:username];
-                      [NSUserDefaults.standardUserDefaults setObject:service forKey:@USER_DEFAULTS_SERVICE];
-                      [NSUserDefaults.standardUserDefaults setObject:username forKey:@USER_DEFAULTS_USERNAME];
-                  }
-                  else
-                  {
-                      [NSUserDefaults.standardUserDefaults removeObjectForKey:@USER_DEFAULTS_SERVICE];
-                      [NSUserDefaults.standardUserDefaults removeObjectForKey:@USER_DEFAULTS_USERNAME];
-                  }
-
-                  [NSUserDefaults.standardUserDefaults synchronize];
               }]
              doError:
              ^(NSError *_)
              {
                  @strongify(self);
 
-                 self.credentials = nil;
+                 [self cleanup];
              }]
             deliverOn:RACScheduler.mainThreadScheduler];
 }}
 //------------------------------------------------------------------------------
-- (void)setCredentials:(AXCredentials *)credentials
+- (void)cleanup
 {
-    _credentials = credentials;
+    self.credentials = nil;
+    self.configurations = nil;
 
-    if (credentials)
-        self.state = AXAuthLoggedIn;
-    else
-    {
-        self.state = AXAuthLoggedOut;
-
-        self.service = nil;
-        self.configurations = nil;
-
-        [NSUserDefaults.standardUserDefaults removeObjectForKey:@USER_DEFAULTS_SERVICE];
-        [NSUserDefaults.standardUserDefaults removeObjectForKey:@USER_DEFAULTS_USERNAME];
-        [NSUserDefaults.standardUserDefaults synchronize];
-    }
+    if (!self.shouldSaveCredentials)
+        self.service = self.username = nil;
 }
 //------------------------------------------------------------------------------
 - (RACSignal *)logout
 {@synchronized(self)
 {
-    if (AXAuthLoggedIn != self.state)
+    if (!self.isLoggedIn)
         return [RACSignal error:[NSError errorWithDomain:@"" code:0 userInfo:
                                  @{
                                     NSLocalizedDescriptionKey :
                                        NSLocalizedString(@"Cannot logout if not logged in.", nil)
                                  }]];
 
-    self.state = AXAuthLoggingOut;
+    [self cleanup];
 
-    @weakify(self);
-
-    return [RACSignal.empty doCompleted:
-            ^
-            {
-                @strongify(self);
-
-                self.credentials = nil;
-            }];
+    return RACSignal.empty;
 }}
 //------------------------------------------------------------------------------
 @end

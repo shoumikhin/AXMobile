@@ -8,21 +8,14 @@
 
 #import "AXCredentials.h"
 
-typedef NS_ENUM(NSInteger, AXAuthState)
-{
-    AXAuthLoggedOut = NO,
-    AXAuthLoggingIn,
-    AXAuthLoggedIn,
-    AXAuthLoggingOut
-};
-
 @interface AXAuthManager : NSObject
 
-@property (nonatomic, readonly) AXAuthState state;
+@property (nonatomic, readonly) BOOL isLoggedIn;
 @property (nonatomic, readonly) NSString *service;
+@property (nonatomic, readonly) NSString *username;
 @property (nonatomic, readonly) AXCredentials *credentials;
 @property (nonatomic, readonly) NSArray *configurations;
-@property (nonatomic) BOOL saveLastLoginCredentials;
+@property (nonatomic) BOOL shouldSaveCredentials;
 
 + (instancetype)shared;
 

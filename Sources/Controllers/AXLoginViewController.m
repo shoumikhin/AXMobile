@@ -1,12 +1,12 @@
 //
-//  LoginViewController.m
+//  AXLoginViewController.m
 //  AXMobile
 //
 //  Created by Anthony Shoumikhin on 8/14/14.
 //  Copyright (c) 2014. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "AXLoginViewController.h"
 
 #import "AXAuthManager.h"
 
@@ -14,7 +14,7 @@
 #define USER_DEFAULTS_SERVICE "USER_DEFAULTS_SERVICE"
 #define USER_DEFAULTS_USERNAME "USER_DEFAULTS_USERNAME"
 //==============================================================================
-@interface LoginViewController ()
+@interface AXLoginViewController ()
 
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -25,16 +25,16 @@
 
 @end
 //==============================================================================
-@implementation LoginViewController
+@implementation AXLoginViewController
 //------------------------------------------------------------------------------
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.navigationItem.hidesBackButton = YES;
+    RACChannelTerminal *shouldSaveCredentials = RACChannelTo(AXAuthManager.shared, shouldSaveCredentials);
 
-    AXAuthManager.shared.saveLastLoginCredentials = self.saveCredentials.isOn;
-    RAC(AXAuthManager.shared, saveLastLoginCredentials) = self.saveCredentials.rac_newOnChannel;
+    [shouldSaveCredentials subscribe:self.saveCredentials.rac_newOnChannel];
+    [self.saveCredentials.rac_newOnChannel subscribe:shouldSaveCredentials];
 
     @weakify(self);
 
@@ -43,19 +43,19 @@
      initWithEnabled:
                      [RACSignal combineLatest:
                       @[
-                        self.usernameTextField.rac_textSignal,
-                        self.passwordTextField.rac_textSignal,
-                        self.serviceTextField.rac_textSignal,
-                        RACObserve(AXAuthManager.shared, state)
+                        [RACSignal merge:@[self.usernameTextField.rac_textSignal, RACObserve(self.usernameTextField, text)]],
+                        [RACSignal merge:@[self.passwordTextField.rac_textSignal, RACObserve(self.passwordTextField, text)]],
+                        [RACSignal merge:@[self.serviceTextField.rac_textSignal, RACObserve(self.serviceTextField, text)]],
+                        RACObserve(AXAuthManager.shared, isLoggedIn)
                       ]
                       reduce:
-                      ^(NSString *username, NSString *password, NSString *service, NSNumber *state)
+                      ^(NSString *username, NSString *password, NSString *service, NSNumber *isLoggedIn)
                       {
                           return @(
                                     username.length > 0 &&
                                     password.length > 0 &&
                                     service.length > 0 &&
-                                    AXAuthLoggedIn != state.integerValue
+                                    !isLoggedIn.boolValue
                                  );
                       }]
      signalBlock:
@@ -76,7 +76,7 @@
           ^{
               @strongify(self);
 
-              if (AXAuthLoggedIn == AXAuthManager.shared.state)
+              if (AXAuthManager.shared.isLoggedIn)
                   [self.navigationController popViewControllerAnimated:YES];
           }];
      }];
@@ -88,6 +88,19 @@
                                      subtitle:error.friendlyLocalizedDescription
                                          type:TSMessageNotificationTypeError];
      }];
+}
+//------------------------------------------------------------------------------
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.usernameTextField.text = AXAuthManager.shared.username;
+    self.serviceTextField.text = AXAuthManager.shared.service;
+
+    if (self.usernameTextField.text.length > 0)
+        [self.passwordTextField becomeFirstResponder];
+    else
+        [self.usernameTextField becomeFirstResponder];
 }
 //------------------------------------------------------------------------------
 @end

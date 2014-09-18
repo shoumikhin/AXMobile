@@ -44,7 +44,6 @@ Thumbs.db
 # Xcode
 
 xcuserdata/
-project.xcworkspace/
 *.xccheckout
 *.moved-aside
 *.hmap

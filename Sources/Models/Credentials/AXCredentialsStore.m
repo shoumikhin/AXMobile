@@ -30,6 +30,10 @@
         return nil;
 
     NSString *serializedCredentials = [SSKeychain passwordForService:service account:username];
+
+    if (!serializedCredentials)
+        return nil;
+
     AXCredentials *credentials = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData.alloc initWithBase64EncodedString:serializedCredentials options:0]];
     NSDate *date = NSDate.new;
 
@@ -37,10 +41,19 @@
         NSOrderedDescending == [date compare:[AXACSTokenParser parseExpirationDate:credentials.ACSToken]])
     {
         [SSKeychain deletePasswordForService:service account:username];
-        credentials = nil;
+
+        return nil;
     }
 
     return credentials;
+}
+//------------------------------------------------------------------------------
++ (BOOL)deleteCredentialsForService:(NSString *)service withUsername:(NSString *)username
+{
+    if (0 == service.length || 0 == username.length)
+        return NO;
+
+    return [SSKeychain deletePasswordForService:service account:username];
 }
 //------------------------------------------------------------------------------
 @end

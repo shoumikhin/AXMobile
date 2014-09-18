@@ -12,6 +12,6 @@
 
 @property (nonatomic) NSURL *ACSURL;
 @property (nonatomic) NSURL *busURL;
-@property (nonatomic) NSString *ADFSToken;
+@property (nonatomic, copy) NSString *ADFSToken;
 
 @end

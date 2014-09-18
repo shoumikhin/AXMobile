@@ -36,7 +36,7 @@
     NSString *expirationDate = [NSDictionary dictionaryWithXMLString:token][@"saml:Conditions"][@"_NotOnOrAfter"];
     NSDateFormatter *dateFormatter = NSDateFormatter.new;
 
-    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
     return [dateFormatter dateFromString:expirationDate];
 }

@@ -8,7 +8,7 @@
 
 @interface AXCredentials : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic) NSString *ADFSToken;
-@property (nonatomic) NSString *ACSToken;
+@property (nonatomic, copy) NSString *ADFSToken;
+@property (nonatomic, copy) NSString *ACSToken;
 
 @end

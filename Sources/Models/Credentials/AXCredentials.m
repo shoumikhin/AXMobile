@@ -15,8 +15,8 @@
 {
     if (self = [super init])
     {
-        self.ADFSToken = [decoder decodeObjectForKey:@"ADFSToken"];
-        self.ACSToken = [decoder decodeObjectForKey:@"ACSToken"];
+        _ADFSToken = [decoder decodeObjectForKey:@"ADFSToken"];
+        _ACSToken = [decoder decodeObjectForKey:@"ACSToken"];
     }
 
     return self;

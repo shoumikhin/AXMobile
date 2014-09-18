@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSURL *ADFSURL;
 @property (nonatomic) NSURL *ACSURL;
-@property (nonatomic) NSString *username;
-@property (nonatomic) NSString *password;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *password;
 
 @end

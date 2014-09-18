@@ -16,7 +16,7 @@
 		9231E30F199CA85300373D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9231E2F6199CA85300373D68 /* Main.storyboard */; };
 		9231E312199CA85300373D68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9231E2FB199CA85300373D68 /* Images.xcassets */; };
 		9231E314199CA85300373D68 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E2FF199CA85300373D68 /* AppDelegate.m */; };
-		9231E315199CA85300373D68 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E302199CA85300373D68 /* LoginViewController.m */; };
+		9231E315199CA85300373D68 /* AXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E302199CA85300373D68 /* AXLoginViewController.m */; };
 		9231E316199CA85300373D68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231E304199CA85300373D68 /* main.m */; };
 		92960C4F19B88A96008EBF9E /* AXAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C2E19B88A96008EBF9E /* AXAuthManager.m */; };
 		92960C5019B88A96008EBF9E /* AXAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C3019B88A96008EBF9E /* AXAuthService.m */; };
@@ -28,14 +28,14 @@
 		92960C5819B88A96008EBF9E /* AXCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4719B88A96008EBF9E /* AXCredentials.m */; };
 		92960C5919B88A96008EBF9E /* AXCredentialsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4919B88A96008EBF9E /* AXCredentialsStore.m */; };
 		92960C5A19B88A96008EBF9E /* AXURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C4E19B88A96008EBF9E /* AXURLConnection.m */; };
-		92960C5D19B88D42008EBF9E /* ExpenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */; };
+		92960C5D19B88D42008EBF9E /* AXExpenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C5C19B88D42008EBF9E /* AXExpenseAddViewController.m */; };
 		92960C6919B9AFF6008EBF9E /* AXBusParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6619B9AFF6008EBF9E /* AXBusParserConfig.m */; };
 		92960C6A19B9AFF6008EBF9E /* AXBusParserExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6819B9AFF6008EBF9E /* AXBusParserExpense.m */; };
 		92960C7119B9B015008EBF9E /* AXBusRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C6D19B9B015008EBF9E /* AXBusRequestBuilder.m */; };
 		92960C7219B9B015008EBF9E /* AXBusParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92960C7019B9B015008EBF9E /* AXBusParser.m */; };
 		92D56CDE199CA99C00B41919 /* AXBusServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D56CDC199CA99C00B41919 /* AXBusServiceTests.m */; };
 		92FCA15E19B6A22B00125DA6 /* TSMessagesDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 92FCA15D19B6A22B00125DA6 /* TSMessagesDesign.json */; };
-		92FCA16319B6B48400125DA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCA16219B6B48400125DA6 /* MainViewController.m */; };
+		92FCA16319B6B48400125DA6 /* AXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCA16219B6B48400125DA6 /* AXMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		9231E2FC199CA85300373D68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9231E2FE199CA85300373D68 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9231E2FF199CA85300373D68 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9231E301199CA85300373D68 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		9231E302199CA85300373D68 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9231E301199CA85300373D68 /* AXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXLoginViewController.h; sourceTree = "<group>"; };
+		9231E302199CA85300373D68 /* AXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXLoginViewController.m; sourceTree = "<group>"; };
 		9231E303199CA85300373D68 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		9231E304199CA85300373D68 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9231E30C199CA85300373D68 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		92960C4C19B88A96008EBF9E /* AXResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXResponseParser.h; sourceTree = "<group>"; };
 		92960C4D19B88A96008EBF9E /* AXURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXURLConnection.h; sourceTree = "<group>"; };
 		92960C4E19B88A96008EBF9E /* AXURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXURLConnection.m; sourceTree = "<group>"; };
-		92960C5B19B88D42008EBF9E /* ExpenseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseAddViewController.h; sourceTree = "<group>"; };
-		92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseAddViewController.m; sourceTree = "<group>"; };
+		92960C5B19B88D42008EBF9E /* AXExpenseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXExpenseAddViewController.h; sourceTree = "<group>"; };
+		92960C5C19B88D42008EBF9E /* AXExpenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXExpenseAddViewController.m; sourceTree = "<group>"; };
 		92960C6519B9AFF6008EBF9E /* AXBusParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusParserConfig.h; sourceTree = "<group>"; };
 		92960C6619B9AFF6008EBF9E /* AXBusParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusParserConfig.m; sourceTree = "<group>"; };
 		92960C6719B9AFF6008EBF9E /* AXBusParserExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXBusParserExpense.h; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		92D56CDB199CA99C00B41919 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D56CDC199CA99C00B41919 /* AXBusServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXBusServiceTests.m; sourceTree = "<group>"; };
 		92FCA15D19B6A22B00125DA6 /* TSMessagesDesign.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TSMessagesDesign.json; sourceTree = "<group>"; };
-		92FCA16119B6B48400125DA6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		92FCA16219B6B48400125DA6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		92FCA16119B6B48400125DA6 /* AXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMainViewController.h; sourceTree = "<group>"; };
+		92FCA16219B6B48400125DA6 /* AXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXMainViewController.m; sourceTree = "<group>"; };
 		F05E375001E64792A1D8F87C /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,12 +213,12 @@
 		9231E300199CA85300373D68 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				92FCA16119B6B48400125DA6 /* MainViewController.h */,
-				92FCA16219B6B48400125DA6 /* MainViewController.m */,
-				9231E301199CA85300373D68 /* LoginViewController.h */,
-				9231E302199CA85300373D68 /* LoginViewController.m */,
-				92960C5B19B88D42008EBF9E /* ExpenseAddViewController.h */,
-				92960C5C19B88D42008EBF9E /* ExpenseAddViewController.m */,
+				92FCA16119B6B48400125DA6 /* AXMainViewController.h */,
+				92FCA16219B6B48400125DA6 /* AXMainViewController.m */,
+				9231E301199CA85300373D68 /* AXLoginViewController.h */,
+				9231E302199CA85300373D68 /* AXLoginViewController.m */,
+				92960C5B19B88D42008EBF9E /* AXExpenseAddViewController.h */,
+				92960C5C19B88D42008EBF9E /* AXExpenseAddViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -411,6 +411,7 @@
 		9231E2C5199CA60900373D68 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AX;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = shoumikh.in;
 				TargetAttributes = {
@@ -539,18 +540,18 @@
 				92960C7119B9B015008EBF9E /* AXBusRequestBuilder.m in Sources */,
 				92960C5119B88A96008EBF9E /* AXACSRequestBuilder.m in Sources */,
 				92960C5019B88A96008EBF9E /* AXAuthService.m in Sources */,
-				92FCA16319B6B48400125DA6 /* MainViewController.m in Sources */,
+				92FCA16319B6B48400125DA6 /* AXMainViewController.m in Sources */,
 				92960C5819B88A96008EBF9E /* AXCredentials.m in Sources */,
 				92960C4F19B88A96008EBF9E /* AXAuthManager.m in Sources */,
 				92960C5A19B88A96008EBF9E /* AXURLConnection.m in Sources */,
 				92960C5419B88A96008EBF9E /* AXADFSTokenParser.m in Sources */,
-				9231E315199CA85300373D68 /* LoginViewController.m in Sources */,
+				9231E315199CA85300373D68 /* AXLoginViewController.m in Sources */,
 				92960C5319B88A96008EBF9E /* AXACSTokenParser.m in Sources */,
 				92960C5519B88A96008EBF9E /* AXBusService.m in Sources */,
 				9231E316199CA85300373D68 /* main.m in Sources */,
 				92960C7219B9B015008EBF9E /* AXBusParser.m in Sources */,
 				92960C6919B9AFF6008EBF9E /* AXBusParserConfig.m in Sources */,
-				92960C5D19B88D42008EBF9E /* ExpenseAddViewController.m in Sources */,
+				92960C5D19B88D42008EBF9E /* AXExpenseAddViewController.m in Sources */,
 				9231E314199CA85300373D68 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +659,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
